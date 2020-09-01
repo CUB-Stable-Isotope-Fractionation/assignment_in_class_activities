@@ -35,7 +35,7 @@ Now that `lintr` is installed, you can click on the *Addins* dropdown menu at th
 
 # Fix code
 
-Now see if you can fix the following code based on the linting markers (intermittently run lint with your keyboard shortcut to see what is fixed and what still needs work).
+Now see if you can fix the following code based on the linting markers (intermittently run lint with your keyboard shortcut to see what is fixed and what still needs work). Note: if you fix the last linting marker, you need to manually close the `Markers` tab, it will not disappear on its own and will continue to show you the last linting marker (even if you've already fixed it).
 
 ```{r "linting"}
 my_data = cars
@@ -46,10 +46,9 @@ myCamelCase <- "camel"
 my_random <- runif (5,min=-5,max=5)
 my_pipe <- 1:10 %>% 
   head() %>% sqrt() %>% mean() %>% round() %>% runif() %>% sort()
-if (my_comment == NA){ 
-  print("hello missing value!") 
+if (my_comment == 5){ 
+  print("hello number 5!") 
 }
-my_seq <- 1:length(my_random)
 my_seq[5 ]
 ```
 
