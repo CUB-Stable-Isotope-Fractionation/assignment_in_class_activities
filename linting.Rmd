@@ -1,0 +1,64 @@
+---
+title: "Coding style best practices"
+date: "Last knitted: `r Sys.Date()`"
+output:
+  html_document: 
+    df_print: paged
+    toc: yes
+    toc_depth: 2
+    toc_float: true
+    code_folding: show
+editor_options:
+  chunk_output_type: console
+---
+
+```{r}
+# load libraries
+library(tidyverse)
+```
+
+
+# Setup
+
+Although the same command can be written in many ways, all programming languages have best practices in terms of coding style. The one recommended for R these days is the [tidyverse style guide](https://style.tidyverse.org/). This style guide is useful as a reference but you don't need to study it in much detail as there is an R package that conveniently will tell you if your code conforms to the coding style and suggests changes if not (a process called *linting*).
+
+To use this package, you have to first install it using the below command.
+
+```{r, eval=FALSE}
+# install lintr package
+install.packages("lintr")
+```
+
+# Use `lintr`
+
+Now that `lintr` is installed, you can click on the *Addins* dropdown menu at the top of RStudio and select *Lint current file* (or select it form the menu under *Tools -> Addins -> Browse Addins...*) and see what output it provides. Note that it is useful to do this frequently while coding and thus is recommended to assign a keyboard shortcut for it (there is none by default). For this, go to *Tools -> Modify Keyboard Shortcuts...* in the menu and search for *Lint* in the search box. Click into the shortcut column and press the shortcut you want to set up. You can choose whatever you like but `Alt/Option`+`Shift`+`L` is recommended since it is relatively intuitive and does not interfere with other existing shortcuts. Now try linting again by pressing your shortcut.
+
+# Fix code
+
+Now see if you can fix the following code based on the linting markers (intermittently run lint with your keyboard shortcut to see what is fixed and what still needs work).
+
+```{r "linting"}
+my_data = cars
+my_string <- 'test'
+my_comment <- 5 # this comment describes the details about what is happening in my_comment <- 5
+my_boolean <- T
+myCamelCase <- "camel"
+my_random <- runif (5,min=-5,max=5)
+my_pipe <- 1:10 %>% 
+  head() %>% sqrt() %>% mean() %>% round() %>% runif() %>% sort()
+if (my_comment == NA){ 
+  print("hello missing value!") 
+}
+my_seq <- 1:length(my_random)
+my_seq[5 ]
+```
+
+# Errors
+
+Linting just catches style issues, however you also want to make sure you do not have any errors in your final RMarkdown assignment. `Knitting` your file regularly can help catch programming errors. Before submitting an assignment for grading, you should always make sure it can be rendered/knitted to produce an HTML file (`Knit to HTML` or `Cmd`+`Shift`+`K`). Try it now and see if the error message helps you fix the following code.
+
+#### 4.2 Fix the code so it can be knitted
+
+```{r "error-fixing"}
+my_dato
+```

@@ -1,0 +1,34 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+~$*
+.Spotlight*
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+
+# exclude R & Rstudio temp files
+*.utf8.md
+*.knit.md
+.Rproj.user
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+.Rbuildignore
+packrat/lib*/
+packrat/src/
+
+# exclude authentication tokens
+.httr-oauth
+
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+
+# output files
+*.html
+*.pdf
+*.docx
